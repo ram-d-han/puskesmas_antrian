@@ -5,6 +5,12 @@
 $this->title = 'Puskesmas';
 ?>
 
+<style type="text/css">
+    .alert {
+        display: none;
+    }
+</style>
+
 <div class="site-index">
 
     <div class="jumbotron text-center">
@@ -41,3 +47,9 @@ $this->title = 'Puskesmas';
 
     </div>
 </div>
+
+<script>
+    if (`<?= Yii::$app->session->getFlash('Berhasil') ?>`) {
+        alert(`<?= Yii::$app->session->getFlash('Berhasil') ?>`);
+    }
+</script>

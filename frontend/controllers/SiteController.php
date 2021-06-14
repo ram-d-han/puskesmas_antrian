@@ -124,7 +124,6 @@ class SiteController extends Controller
 
             $poli_tjn = str_replace(' ', '_', $post['poli_tujuan']);
 
-
                 if ($nama_pasien != null && 
                     $post['nama_pasien']  == $nama_pasien->nama_pasien && 
                     $post['no_rm'] == $nama_pasien->no_rm) {
@@ -168,6 +167,8 @@ class SiteController extends Controller
                                 ['tgl_antrian' => $tgl])->execute();
 
                         }
+                        Yii::$app->session->setFlash('Berhasil', 'Nomor antrian poli anda adalah '.$poli->count());
+
                         return $this->goBack();
 
                     }  else {
